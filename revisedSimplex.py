@@ -26,7 +26,7 @@ class RevisedSimplex:
         except np.linalg.LinAlgError:
             raise ValueError("Initial basis matrix is singular.")
 
-        self.x_b = self.B_inv @ self.b  # This is the fix!
+        self.x_b = self.B_inv @ self.b  
 
         if not np.all(self.x_b >= -self.tol):
             raise ValueError("Initial basis is not feasible.")
